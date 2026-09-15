@@ -1,0 +1,16 @@
+services:
+  - type: web
+    name: whisper-webservice
+    runtime: docker
+    plan: free
+    dockerfilePath: Dockerfile
+    healthCheckPath: /
+    envVars:
+      - key: WHISPER_MODEL
+        value: base
+      - key: WHISPER_DEVICE
+        value: cpu
+      - key: WHISPER_COMPUTE
+        value: int8
+      - key: WHISPER_THREADS
+        value: "4"
